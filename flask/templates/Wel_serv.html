@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Welcome</title>
+    <style>
+      .block {
+        display: block;
+        margin: auto;
+        border: none;
+        background-color: #4caf50;
+        color: white;
+        padding: 14px 28px;
+        font-size: 16px;
+        cursor: pointer;
+        text-align: center;
+      }
+      footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 2.5rem;
+      }
+    </style>
+  </head>
+
+  <body style="text-align: center">
+    <h1>WELCOME {{name}}</h1>
+    <form action="/html_table2" method="post">
+      <h3>Enter Customer Name</h3>
+      <br />
+      <br />
+
+      <input type="text" name="customer_name" placeholder="customer name" />
+      <br />
+      <br />
+      <button
+        class="block"
+        type="submit"
+        name="submit_button4"
+        value="Do Something"
+      >
+        Project Status of Customers
+      </button>
+      <br />
+      <br />
+    </form>
+    <!-- <form action="/chart" method="post">
+      <button class="block" type="submit" name="submit_button" value="chart">
+        See Project Status and charts
+      </button>
+    </form>
+    <br />
+    <br /> -->
+    <h3>{{me}}</h3>
+    <br />
+    <br />
+    <form action="/signout3" method="post">
+      <button
+        class="block"
+        type="submit"
+        name="signout_button3"
+        value="signout"
+      >
+        Sign Out
+      </button>
+      <br />
+      <br />
+    </form>
+
+    <footer>
+      <h1>Try the chat bot for more!</h1>
+
+      <script>
+        function preSendhandler(event) {
+          event.data.context.skills["main skill"] = event.data.context.skills[
+            "main skill"
+          ] || { user_defined: {} };
+          event.data.context.skills["main skill"].user_defined.serv =
+            "{{name}}";
+        }
+        window.watsonAssistantChatOptions = {
+          integrationID: "5e86d588-8127-4797-b61a-fca97b6c1af2", // The ID of this integration.
+          region: "eu-gb", // The region your integration is hosted in.
+          serviceInstanceID: "bae1f801-b06a-4c7d-8648-7a66fce3cf5a", // The ID of your service instance.
+          onLoad: function (instance) {
+            instance.on({ type: "pre:send", handler: preSendhandler });
+            instance.render();
+          },
+        };
+        setTimeout(function () {
+          const t = document.createElement("script");
+          t.src =
+            "https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
+          document.head.appendChild(t);
+        });
+      </script>
+    </footer>
+    <!-- <input type="submit" name="submit_button" value="Do Something" /> -->
+  </body>
+</html>

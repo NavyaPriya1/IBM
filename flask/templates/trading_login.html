@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- <title>Title</title> -->
+    <title>Login</title>
+    <style>
+      .block {
+        display: block;
+        margin: auto;
+        border: none;
+        background-color: #4caf50;
+        color: white;
+        padding: 14px 28px;
+        font-size: 16px;
+        cursor: pointer;
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body style="text-align: center">
+    <h1>Welcome Trading Partners</h1>
+    <br />
+    <br />
+    <br />
+    <form action="/wel_trade" method="post">
+      <input type="text" name="username" placeholder="username" />
+      <input type="password" name="password" placeholder="password" />
+      <br />
+      <br />
+      <br />
+      <input class="block" type="submit" value="Login" />
+    </form>
+    <h3>{{me}}</h3>
+    <form action="/main_page1" method="post">
+      <input
+        class="block"
+        type="submit"
+        name="signout_button11"
+        value="Go to Main Login"
+      />
+    </form>
+  </body>
+</html>

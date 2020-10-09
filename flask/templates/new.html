@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- <title>Title</title> -->
+    <title>Project Report</title>
+    <style>
+      table.dataframe,
+      .dataframe th,
+      .dataframe td {
+        text-align: left;
+      }
+      #htmltable {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .block {
+        display: block;
+        margin: auto;
+        border: none;
+        background-color: #4caf50;
+        color: white;
+        padding: 14px 28px;
+        font-size: 16px;
+        cursor: pointer;
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body style="text-align: center">
+    <h1>Project Reports</h1>
+    {% for table in tables %} {{ table|safe }} {%endfor%}
+    <br />
+    <br />
+    <img src="{{ image }}" alt="plot" />
+    <img src="{{ image1 }}" alt="plot1" />
+    <form action="/download" method="post">
+      <button class="block" type="submit" name="submit_button" value="download">
+        Download Project Report
+      </button>
+      <br />
+      <br />
+    </form>
+    <form action="/back" method="post">
+      <button class="block" type="submit" name="submitt_button" value="Go back">
+        Go back
+      </button>
+    </form>
+  </body>
+</html>

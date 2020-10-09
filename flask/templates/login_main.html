@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- <title>Title</title> -->
+    <title>Main Page</title>
+    <style>
+      .block {
+        display: block;
+        margin: auto;
+        border: none;
+        background-color: #4caf50;
+        color: white;
+        padding: 14px 28px;
+        font-size: 16px;
+        cursor: pointer;
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body style="text-align: center">
+    <h1>Welcome</h1>
+    <br />
+    <br />
+    <br />
+
+    <form action="/customer" method="post">
+      <input class="block" type="submit" name="customer" value="Customer" />
+    </form>
+    <br />
+    <br />
+    <form action="/trading_partner" method="post">
+      <input
+        class="block"
+        type="submit"
+        name="trading partner"
+        value="Trading Partner"
+      />
+    </form>
+    <br />
+    <br />
+    <form action="/service" method="post">
+      <input
+        class="block"
+        type="submit"
+        name="service"
+        value="Service Provider"
+      />
+    </form>
+    <br />
+    <br />
+    <!-- <form action="/download" method="post">
+      <input class="block" type="submit" name="service" value="service" />
+    </form> -->
+  </body>
+</html>
